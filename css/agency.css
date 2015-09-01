@@ -836,7 +836,7 @@ ul.social-buttons li a:active {
 
 .portfolio-modal .modal-backdrop {
     display: none;
-    opacity: 0;
+    opacity: 50;
 }
 
 ::-moz-selection {
