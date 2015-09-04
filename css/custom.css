@@ -650,6 +650,13 @@ aside.clients img {
     margin: 50px auto;
 }
 
+div.vault-login {
+  padding-bottom: 25%;
+  padding-left: 25%;
+  padding-right: 25%;
+
+}
+
 section#contact {
     background-color: #222;
     background-image: url(../img/ufo2.jpg);
@@ -721,6 +728,16 @@ footer span.copyright {
     text-transform: none;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     line-height: 40px;
+}
+
+footer a.vault{
+    text-transform: uppercase;
+    text-transform: none;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 40px;
+    color: #222;
+    font-size: 150%;
+
 }
 
 footer ul.quicklinks {
@@ -877,4 +894,11 @@ body {
     left: 0;
     width: 75%;
     height: 75%;
+}
+
+.login-error {
+  margin-top: 20%;
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-bottom: 0%;
 }
