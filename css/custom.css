@@ -735,9 +735,13 @@ footer a.vault{
     text-transform: none;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     line-height: 40px;
-    color: #222;
+    color: white;
     font-size: 150%;
 
+}
+
+footer a.vault:hover{
+  color: #222;
 }
 
 footer ul.quicklinks {
@@ -901,4 +905,15 @@ body {
   margin-left: 35%;
   margin-right: 35%;
   margin-bottom: 0%;
+}
+
+.secret-lock {
+  color: #222;
+}
+.secret-lock:hover {
+    color: #bbb;
+}
+.ufo-link {
+  color: black;
+  padding: 150%;
 }
