@@ -64,8 +64,7 @@
         <div class="clearfix"></div>
             <div id="success"></div>
         <div class="text-center">
-<input type="submit" name="submit" id="submit" value="submit" />
-            <!--<button name="submit" type="submit" value="Submit" form="vaultLogin" class="btn btn-xl">Open Vault</button>-->
+          <button name="submit" type="submit" value="Submit" form="vaultLogin" class="btn btn-xl">Open Vault</button>
 
         </div>
 
