@@ -3,41 +3,6 @@
 <?php include("includes/validation_functions.php");?>
 <?php require_once("includes/db_connection.php");?>
 
-<?php
-$username = "";
-if (isset($_POST['submit'])) {
-
-
-  // validation
-  $required_fields = array("username", "password");
-  validate_presences($required_fields);
-
-
-  if (empty($errors)) {
-
-    $username = ($_POST["username"]);
-    $password = ($_POST["password"]);
-
-    $found_admin = attempt_login($username, $password);
-  }
-
-  if ($found_admin) {
-    // Success
-    $_SESSION["admin_id"] = $found_admin["id"];
-    $_SESSION["username"] = $found_admin["username"];
-
-    redirect_to("vault.php");
-  } else {
-    // Failure
-    $_SESSION["message"] = "Username/password not found.";
-  }
-
-
-
-} else {
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,7 +33,6 @@ if (isset($_POST['submit'])) {
       <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
 
         <!-- jQuery -->
-        <script src="js/jquery.js"></script>
 
 
 
@@ -87,7 +51,7 @@ if (isset($_POST['submit'])) {
 </div>
 <div class="vault-login container">
 
-<form name="vaultLogin" id="vaultLogin" action="login.php" method="post" >
+<form name="vaultLogin" id="vaultLogin" action="checklogin.php" method="post" >
     <div class="row">
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Name Tag *" id="username" name="username" required data-validation-required-message="Please enter your name tag.">
@@ -100,7 +64,8 @@ if (isset($_POST['submit'])) {
         <div class="clearfix"></div>
             <div id="success"></div>
         <div class="text-center">
-            <button name="submit" type="submit" value="Submit" form="vaultLogin" class="btn btn-xl">Open Vault</button>
+<input type="submit" name="submit" id="submit" value="submit" />
+            <!--<button name="submit" type="submit" value="Submit" form="vaultLogin" class="btn btn-xl">Open Vault</button>-->
 
         </div>
 

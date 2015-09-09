@@ -230,7 +230,7 @@ function find_all_admins() {
     global $connection;
 
     $query = "SELECT * ";
-    $query .= "FROM admins ";
+    $query .= "FROM users ";
     //$query .= "ORDER BY position ASC";
 
     $admin_set = mysqli_query($connection, $query);
@@ -246,7 +246,7 @@ function find_admin_by_id($admin_id) {
     $safe_admin_id = mysqli_real_escape_string($connection, $admin_id);
 
     $query  = "SELECT * ";
-    $query .= "FROM admins ";
+    $query .= "FROM users ";
     $query .= "WHERE id = {$safe_admin_id} ";
     $query .= "LIMIT 1";
     $admin_set = mysqli_query($connection, $query);
@@ -264,7 +264,7 @@ function find_admin_by_username($username) {
     $safe_username = mysqli_real_escape_string($connection, $username);
 
     $query  = "SELECT * ";
-    $query .= "FROM members ";
+    $query .= "FROM users ";
     $query .= "WHERE username = '{$safe_username}' ";
     $query .= "LIMIT 1";
     $admin_set = mysqli_query($connection, $query);
@@ -305,7 +305,7 @@ function password_check($password, $existing_hash) {
 function attempt_login($username, $password) {
     $admin = find_admin_by_username($username);
     if ($admin) {
-        if (password_check($password, $admin["password"])) {
+        if (password_check($password, $admin["hashed_password"])) {
             return $admin;
         } else {
             return false;

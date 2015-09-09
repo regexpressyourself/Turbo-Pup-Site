@@ -1,12 +1,11 @@
-
-    <?php include("includes/session.php");?>
-    <?php include("includes/functions.php");?>
-    <?php include("includes/validation_functions.php");?>
-    <?php require_once("includes/db_connection.php");?>
+<?php include("includes/session.php");?>
+<?php include("includes/functions.php");?>
+<?php include("includes/validation_functions.php");?>
+<?php require_once("includes/db_connection.php");?>
 
 <?php
 $username = "";
-if (isset($_POST['submit'])) {
+if (isset($_POST['username'])) {
 
 
   // validation
@@ -36,11 +35,9 @@ if (isset($_POST['submit'])) {
 
 
 } else {
-  $_SESSION["message"] = "nope!";
+  $_SESSION["message"] = "No Post SubmitteD";
 }
 ?>
-
-
-
-
-
+<div>
+  <?php echo message(); ?>
+</div>
