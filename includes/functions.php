@@ -266,7 +266,7 @@ function find_admin_by_username($username) {
     $query  = "SELECT * ";
     $query .= "FROM users ";
     $query .= "WHERE username = '{$safe_username}' ";
-    $query .= "LIMIT 1";
+    $query .= "LIMIT 1;";
     $admin_set = mysqli_query($connection, $query);
     confirm_query($admin_set);
     if ($admin = mysqli_fetch_assoc($admin_set)) {
