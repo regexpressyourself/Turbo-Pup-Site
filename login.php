@@ -32,7 +32,9 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
 
-        <!-- jQuery -->
+        <!-- jQuery 
+        <script src="js/jquery.js"></script>
+-->
 
 
 
@@ -46,73 +48,71 @@
 </head>
 
 <body id="page-top" class="login bg-darkest-gray">
-<div class="login-error">
-  <?php echo message(); ?>
-</div>
-<div class="vault-login container">
-
-<form name="vaultLogin" id="vaultLogin" action="checklogin.php" method="post" >
-    <div class="row">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Name Tag *" id="username" name="username" required data-validation-required-message="Please enter your name tag.">
-                <p class="help-block text-danger"></p>
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control" placeholder="Combination *" id="password" name="password" required data-validation-required-message="Please enter your combination.">
-                <p class="help-block text-danger"></p>
-            </div>
-        <div class="clearfix"></div>
-            <div id="success"></div>
-        <div class="text-center">
-          <button name="submit" type="submit" value="Submit" form="vaultLogin" class="btn btn-xl">Open Vault</button>
-
-        </div>
-
-    </div>
-  </form>
-
-  <div class="text-center">
-    <a href="#question-modal" data-toggle="modal"><i class="glyphicon glyphicon-question-sign"></i></a>
+  <div class="login-error">
+    <?php echo message(); ?>
   </div>
+  <h1 class="text-center">The Vault</h1>
+  <div class="vault-login container">
+    <div id="login-form">
+      <form name="vaultLogin" id="vaultLogin" action="checklogin.php" method="post" >
+        <div class="row">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Name Tag *" id="username" name="username" required data-validation-required-message="Please enter your name tag.">
+            <p class="help-block text-danger"></p>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Combination *" id="password" name="password" required data-validation-required-message="Please enter your combination.">
+            <p class="help-block text-danger"></p>
+          </div>
+          <div class="clearfix"></div>
+          <div id="success"></div>
+          <div class="text-center">
+            <button name="submit" type="submit" value="Submit" form="vaultLogin" class="btn btn-xl">Open</button>
+          </div>
+        </div>
+      </form>
+    </div>
 
-</div>
-
-<!-- Modal -->
-<div id="question-modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">So what's the vault?</h4>
-      </div>
-      <div class="modal-body">
+    <div class="row" id="overlay">
+      <div class="form-group" onclick="overlay()">
+        <h2>So What's the Vault?</h2>
         <p>The vault is where we hide the really good stuff. You can get your own name tag and combination at any of our live shows.</p>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
     </div>
-
+    <div class="text-center">
+      <a class="popup-selector" href="#" onclick='overlay()'><i class="glyphicon glyphicon-question-sign"></i></a>
+    </div>
   </div>
-</div>
 
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
+  <!-- Plugin JavaScript -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+  <script src="js/classie.js"></script>
+  <script src="js/cbpAnimatedHeader.js"></script>
 
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="js/custom.js"></script>
+  <!-- Contact Form JavaScript -->
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script src="js/custom.js"></script>
+
+  <script type="text/javascript" charset="utf-8">
+    function overlay() {
+      el = document.getElementById("overlay");
+      el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+      form = document.getElementById("login-form");
+      if (el.style.visibility == "visible") {
+        form.style.visibility = "hidden";
+      } else {
+        form.style.visibility = "visible";
+      }
+    }
+  </script>
 
 </body>
 

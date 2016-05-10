@@ -927,3 +927,27 @@ body {
   padding-top: 20px;
   font-size: 200%;
 }
+
+/* Popup notification for login.php */
+#overlay {
+  visibility: hidden;
+  position: absolute;
+  left: 0px;
+  top: 39%;
+  width:100%;
+  height:100%;
+  text-align:center;
+  z-index: 1000;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+#overlay div {
+  width = 30%;
+  margin: 50px auto;
+  background-color: #222;
+  font-color: #333;
+  padding:15px;
+  text-align:center;
+  
+}
+                                                                      }
